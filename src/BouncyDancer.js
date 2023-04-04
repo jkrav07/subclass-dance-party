@@ -10,7 +10,13 @@ makeBouncyDancer.prototype.step = function() {
   makeDancer.prototype.step.call(this);
   this.top = $('body').height() * Math.random();
   this.left = $('body').width() * Math.random();
-  console.log('boucy');
   this.setPosition(this.top, this.left);
 
+};
+
+makeBouncyDancer.prototype.setColor = function() { //////
+  var styleSettings = {
+    border: '30px solid blue'
+  };
+  this.$node.css(styleSettings); //////
 };
