@@ -4,12 +4,9 @@ $(document).ready(function() {
   $('.topbar').append('<a href="#" class="line-up">line up</a>');
 
   $('.line-up').on('click', function(event) {
-    let bDCounter = 0;
+    let counters = {};
     window.dancers.forEach(dancer => {
-      if (dancer.constructor === makeBlinkyDancer) {
-        dancer.lineUp(bDCounter);
-        bDCounter += 20;
-      }
+      dancer.lineUp(counters);
     });
   });
 
@@ -30,5 +27,4 @@ $(document).ready(function() {
 
   });
 });
-
 

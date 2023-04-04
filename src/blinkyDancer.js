@@ -12,19 +12,27 @@ makeBlinkyDancer.prototype.step = function() {
 };
 
 
-makeBlinkyDancer.prototype.lineUp = function(horizontal) {
+makeBlinkyDancer.prototype.lineUp = function(counters) {
+  if (counters.bDcounter === undefined) {
+    counters.bDcounter = 0;
+  }
   this.top = $('body').height() * 0.5;
-  this.left = $('body').width() * 0.5 + horizontal;
+  this.left = $('body').width() * 0.5 + counters.bDcounter;
   this.setPosition(this.top, this.left);
+  counters.bDcounter += 40;
 };
 
-makeBlinkyDancer.prototype.setColor = function() { //////
+
+makeBlinkyDancer.prototype.setNode = function() {
+  this.$node = $('<img class="dancer" src="https://raw.githubusercontent.com/kevinwuhoo/slackmojis/main/emojis/Among%20Us/among-us-red-run.gif">');
+};
+
+
+makeBlinkyDancer.prototype.setColor = function() {
   var styleSettings = {
-    border: '10px solid green'
+    border: '0px'
   };
-  this.$node.css(styleSettings); //////
+  this.$node.css(styleSettings);
 };
 
-makeBlinkyDancer.prototype.setImage = function() {
-  this.$node.css
-}
+
